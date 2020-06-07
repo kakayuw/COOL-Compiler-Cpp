@@ -1,0 +1,1335 @@
+checking arith.cl
+48,50d47
+< #20 '-'
+< #20 '-'
+< #20 OBJECTID same
+67,69d63
+< #24 '-'
+< #24 '-'
+< #24 OBJECTID plus
+106,108d99
+< #33 '-'
+< #33 '-'
+< #33 OBJECTID negate
+148,150d138
+< #42 '-'
+< #42 '-'
+< #42 OBJECTID diff
+219,221d206
+< #60 '-'
+< #60 '-'
+< #60 OBJECTID factorial
+282,288d266
+< #78 '-'
+< #78 '-'
+< #78 TYPEID B
+< #78 OBJECTID is
+< #78 OBJECTID a
+< #78 OBJECTID number
+< #78 OBJECTID squared
+298,300d275
+< #80 '-'
+< #80 '-'
+< #80 OBJECTID square
+344,346d318
+< #93 '-'
+< #93 '-'
+< #93 OBJECTID negate
+382,384d353
+< #102 '-'
+< #102 '-'
+< #102 OBJECTID cube
+430,434d398
+< #115 '-'
+< #115 '-'
+< #115 OBJECTID divisible
+< #115 OBJECTID by
+< #115 INT_CONST 3
+504,506d467
+< #130 '-'
+< #130 '-'
+< #130 OBJECTID division
+725,734d685
+< #187 '-'
+< #187 '-'
+< #187 OBJECTID the
+< #187 STR_CONST ""
+< #187 OBJECTID is
+< #187 OBJECTID needed
+< #187 OBJECTID to
+< #187 OBJECTID satisfy
+< #187 OBJECTID the
+< #187 OBJECTID typchecker
+1418,1433d1368
+< #344 '-'
+< #344 '-'
+< #344 OBJECTID avar
+< #344 ASSIGN
+< #344 '('
+< #344 NEW
+< #344 TYPEID A
+< #344 ')'
+< #344 '.'
+< #344 OBJECTID set_var
+< #344 '('
+< #344 OBJECTID get_int
+< #344 '('
+< #344 ')'
+< #344 ')'
+< #344 ';'
+1465,1476d1399
+< #352 '-'
+< #352 '-'
+< #352 OBJECTID print
+< #352 '('
+< #352 OBJECTID avar
+< #352 ')'
+< #352 ';'
+< #352 '-'
+< #352 '-'
+< #352 OBJECTID prints
+< #352 OBJECTID out
+< #352 OBJECTID answer
+1493,1495d1415
+< #355 '-'
+< #355 '-'
+< #355 OBJECTID add
+1540,1542d1459
+< #360 '-'
+< #360 '-'
+< #360 OBJECTID negate
+1605,1607d1521
+< #369 '-'
+< #369 '-'
+< #369 OBJECTID diff
+1670,1672d1583
+< #375 '-'
+< #375 '-'
+< #375 OBJECTID factorial
+1696,1698d1606
+< #377 '-'
+< #377 '-'
+< #377 OBJECTID square
+1722,1724d1629
+< #379 '-'
+< #379 '-'
+< #379 OBJECTID cube
+1730,1735d1634
+< #380 '-'
+< #380 '-'
+< #380 OBJECTID multiple
+< #380 OF
+< #380 INT_CONST 3
+< #380 ERROR "?"
+1753,1769d1651
+< #382 '-'
+< #382 '-'
+< #382 OBJECTID avar
+< #382 ASSIGN
+< #382 '('
+< #382 NEW
+< #382 TYPEID A
+< #382 ')'
+< #382 '.'
+< #382 OBJECTID method1
+< #382 '('
+< #382 OBJECTID avar
+< #382 '.'
+< #382 OBJECTID value
+< #382 '('
+< #382 ')'
+< #382 ')'
+1788,1800d1669
+< #388 '-'
+< #388 '-'
+< #388 OBJECTID avar
+< #388 ASSIGN
+< #388 '('
+< #388 NEW
+< #388 TYPEID A
+< #388 ')'
+< #388 '.'
+< #388 OBJECTID set_var
+< #388 '('
+< #388 INT_CONST 0
+< #388 ')'
+1926,1931d1794
+< #411 '-'
+< #411 '-'
+< #411 OBJECTID end
+< #411 LET
+< #411 OBJECTID a
+< #411 ':'
+1935,1940d1797
+< #413 '-'
+< #413 '-'
+< #413 OBJECTID end
+< #413 LET
+< #413 OBJECTID r
+< #413 ':'
+1947,1952d1803
+< #416 '-'
+< #416 '-'
+< #416 OBJECTID end
+< #416 LET
+< #416 OBJECTID x
+< #416 ':'
+1990,1994d1840
+< #422 '-'
+< #422 '-'
+< #422 OBJECTID divide
+< #422 '/'
+< #422 INT_CONST 8
+checking atoi.cl
+92,101d91
+< #26 '-'
+< #26 '-'
+< #26 OBJECTID the
+< #26 INT_CONST 0
+< #26 OBJECTID is
+< #26 OBJECTID needed
+< #26 OBJECTID to
+< #26 OBJECTID satisfy
+< #26 OBJECTID the
+< #26 OBJECTID typchecker
+201,210d190
+< #44 '-'
+< #44 '-'
+< #44 OBJECTID the
+< #44 STR_CONST ""
+< #44 OBJECTID is
+< #44 OBJECTID needed
+< #44 OBJECTID to
+< #44 OBJECTID satisfy
+< #44 OBJECTID the
+< #44 OBJECTID typchecker
+checking atoi_test.cl
+74,83d73
+< #29 '-'
+< #29 '-'
+< #29 OBJECTID we
+< #29 OBJECTID don
+< #29 ERROR "'"
+< #29 OBJECTID t
+< #29 OBJECTID bother
+< #29 OBJECTID to
+< #29 OBJECTID terminate
+< #29 OBJECTID gracefully
+checking book_list.cl
+2,13d1
+< #1 '-'
+< #1 '-'
+< #1 OBJECTID example
+< #1 OF
+< #1 OBJECTID static
+< #1 OBJECTID and
+< #1 OBJECTID dynamic
+< #1 OBJECTID type
+< #1 OBJECTID differing
+< #1 OBJECTID for
+< #1 OBJECTID a
+< #1 OBJECTID dispatch
+284,294d271
+< #74 '-'
+< #74 '-'
+< #74 TYPEID We
+< #74 OBJECTID keep
+< #74 OBJECTID the
+< #74 OBJECTID car
+< #74 OBJECTID and
+< #74 OBJECTID cdr
+< #74 IN
+< #74 OBJECTID attributes
+< #74 '.'
+299,330d275
+< #75 '-'
+< #75 '-'
+< #75 TYPEID Because
+< #75 OBJECTID methods
+< #75 OBJECTID and
+< #75 OBJECTID features
+< #75 OBJECTID must
+< #75 OBJECTID have
+< #75 OBJECTID different
+< #75 OBJECTID names
+< #75 ','
+< #76 '-'
+< #76 '-'
+< #76 OBJECTID we
+< #76 OBJECTID use
+< #76 OBJECTID xcar
+< #76 OBJECTID and
+< #76 OBJECTID xcdr
+< #76 OBJECTID for
+< #76 OBJECTID the
+< #76 OBJECTID attributes
+< #76 OBJECTID and
+< #76 OBJECTID reserve
+< #77 '-'
+< #77 '-'
+< #77 OBJECTID car
+< #77 OBJECTID and
+< #77 OBJECTID cdr
+< #77 OBJECTID for
+< #77 OBJECTID the
+< #77 OBJECTID features
+< #77 '.'
+532,536d476
+< #129 '-'
+< #129 '-'
+< #129 OBJECTID end
+< #129 LET
+< #129 OBJECTID an_article
+538,542d477
+< #130 '-'
+< #130 '-'
+< #130 OBJECTID end
+< #130 LET
+< #130 OBJECTID a_book
+checking cells.cl
+checking complex.cl
+checking cool.cl
+checking g1.graph
+checking graph.cl
+281,290d280
+< #117 '-'
+< #117 '-'
+< #117 TYPEID Define
+< #117 OBJECTID operations
+< #117 OBJECTID on
+< #117 OBJECTID empty
+< #117 OBJECTID lists
+< #117 OF
+< #117 TYPEID Edges
+< #117 '.'
+336,420d325
+< #127 '-'
+< #127 '-'
+< #127 TYPEID When
+< #127 OBJECTID we
+< #127 OBJECTID cons
+< #127 OBJECTID and
+< #127 OBJECTID element
+< #127 OBJECTID onto
+< #127 OBJECTID the
+< #127 OBJECTID empty
+< #127 OBJECTID list
+< #127 OBJECTID we
+< #127 OBJECTID get
+< #127 OBJECTID a
+< #127 OBJECTID non
+< #127 '-'
+< #127 OBJECTID empty
+< #128 '-'
+< #128 '-'
+< #128 OBJECTID list
+< #128 '.'
+< #128 TYPEID The
+< #128 '('
+< #128 NEW
+< #128 TYPEID Cons
+< #128 ')'
+< #128 OBJECTID expression
+< #128 OBJECTID creates
+< #128 OBJECTID a
+< #128 NEW
+< #128 OBJECTID list
+< #128 OBJECTID cell
+< #128 OF
+< #128 CLASS
+< #129 '-'
+< #129 '-'
+< #129 TYPEID Cons
+< #129 ','
+< #129 OBJECTID which
+< #129 OBJECTID is
+< #129 OBJECTID initialized
+< #129 OBJECTID by
+< #129 OBJECTID a
+< #129 OBJECTID dispatch
+< #129 OBJECTID to
+< #129 OBJECTID init
+< #129 '('
+< #129 ')'
+< #129 '.'
+< #130 '-'
+< #130 '-'
+< #130 TYPEID The
+< #130 OBJECTID result
+< #130 OF
+< #130 OBJECTID init
+< #130 '('
+< #130 ')'
+< #130 OBJECTID is
+< #130 OBJECTID an
+< #130 OBJECTID element
+< #130 OF
+< #130 CLASS
+< #130 TYPEID Cons
+< #130 ','
+< #130 OBJECTID but
+< #130 OBJECTID it
+< #131 '-'
+< #131 '-'
+< #131 OBJECTID conforms
+< #131 OBJECTID to
+< #131 OBJECTID the
+< #131 OBJECTID return
+< #131 OBJECTID type
+< #131 TYPEID List
+< #131 ','
+< #131 OBJECTID because
+< #131 TYPEID Cons
+< #131 OBJECTID is
+< #131 OBJECTID a
+< #131 OBJECTID subclass
+< #131 OF
+< #132 '-'
+< #132 '-'
+< #132 TYPEID List
+< #132 '.'
+502,508d406
+< #166 '-'
+< #166 '-'
+< #166 TYPEID The
+< #166 OBJECTID rest
+< #166 OF
+< #166 OBJECTID the
+< #166 OBJECTID list
+592,601d489
+< #195 '-'
+< #195 '-'
+< #195 TYPEID Define
+< #195 OBJECTID operations
+< #195 OBJECTID on
+< #195 OBJECTID empty
+< #195 OBJECTID lists
+< #195 OF
+< #195 OBJECTID vertices
+< #195 '.'
+647,731d534
+< #205 '-'
+< #205 '-'
+< #205 TYPEID When
+< #205 OBJECTID we
+< #205 OBJECTID cons
+< #205 OBJECTID and
+< #205 OBJECTID element
+< #205 OBJECTID onto
+< #205 OBJECTID the
+< #205 OBJECTID empty
+< #205 OBJECTID list
+< #205 OBJECTID we
+< #205 OBJECTID get
+< #205 OBJECTID a
+< #205 OBJECTID non
+< #205 '-'
+< #205 OBJECTID empty
+< #206 '-'
+< #206 '-'
+< #206 OBJECTID list
+< #206 '.'
+< #206 TYPEID The
+< #206 '('
+< #206 NEW
+< #206 TYPEID Cons
+< #206 ')'
+< #206 OBJECTID expression
+< #206 OBJECTID creates
+< #206 OBJECTID a
+< #206 NEW
+< #206 OBJECTID list
+< #206 OBJECTID cell
+< #206 OF
+< #206 CLASS
+< #207 '-'
+< #207 '-'
+< #207 TYPEID ECons
+< #207 ','
+< #207 OBJECTID which
+< #207 OBJECTID is
+< #207 OBJECTID initialized
+< #207 OBJECTID by
+< #207 OBJECTID a
+< #207 OBJECTID dispatch
+< #207 OBJECTID to
+< #207 OBJECTID init
+< #207 '('
+< #207 ')'
+< #207 '.'
+< #208 '-'
+< #208 '-'
+< #208 TYPEID The
+< #208 OBJECTID result
+< #208 OF
+< #208 OBJECTID init
+< #208 '('
+< #208 ')'
+< #208 OBJECTID is
+< #208 OBJECTID an
+< #208 OBJECTID element
+< #208 OF
+< #208 CLASS
+< #208 TYPEID Cons
+< #208 ','
+< #208 OBJECTID but
+< #208 OBJECTID it
+< #209 '-'
+< #209 '-'
+< #209 OBJECTID conforms
+< #209 OBJECTID to
+< #209 OBJECTID the
+< #209 OBJECTID return
+< #209 OBJECTID type
+< #209 TYPEID List
+< #209 ','
+< #209 OBJECTID because
+< #209 TYPEID Cons
+< #209 OBJECTID is
+< #209 OBJECTID a
+< #209 OBJECTID subclass
+< #209 OF
+< #210 '-'
+< #210 '-'
+< #210 TYPEID List
+< #210 '.'
+777,783d579
+< #223 '-'
+< #223 '-'
+< #223 TYPEID The
+< #223 OBJECTID rest
+< #223 OF
+< #223 OBJECTID the
+< #223 OBJECTID list
+874,882d669
+< #254 '-'
+< #254 '-'
+< #254 TYPEID Reads
+< #254 OBJECTID the
+< #254 OBJECTID input
+< #254 OBJECTID and
+< #254 OBJECTID parses
+< #254 OBJECTID the
+< #254 OBJECTID fields
+928,941d714
+< #261 '-'
+< #261 '-'
+< #261 OBJECTID out_string
+< #261 '('
+< #261 OBJECTID line
+< #261 ')'
+< #261 ';'
+< #262 '-'
+< #262 '-'
+< #262 OBJECTID out_string
+< #262 '('
+< #262 STR_CONST "\n"
+< #262 ')'
+< #262 ';'
+1010,1023d782
+< #275 '-'
+< #275 '-'
+< #275 OBJECTID out_string
+< #275 '('
+< #275 OBJECTID rest
+< #275 ')'
+< #275 ';'
+< #276 '-'
+< #276 '-'
+< #276 OBJECTID out_string
+< #276 '('
+< #276 STR_CONST "\n"
+< #276 ')'
+< #276 ';'
+1165,1174d923
+< #301 '-'
+< #301 '-'
+< #301 OBJECTID the
+< #301 INT_CONST 0
+< #301 OBJECTID is
+< #301 OBJECTID needed
+< #301 OBJECTID to
+< #301 OBJECTID satisfy
+< #301 OBJECTID the
+< #301 OBJECTID typchecker
+checking hairyscary.cl
+checking hello_world.cl
+checking io.cl
+5,22d4
+< #51 '-'
+< #51 '-'
+< #51 LET
+< #51 ERROR "'"
+< #51 OBJECTID s
+< #51 OBJECTID assume
+< #51 OBJECTID that
+< #51 OBJECTID we
+< #51 OBJECTID don
+< #51 ERROR "'"
+< #51 OBJECTID t
+< #51 OBJECTID want
+< #51 TYPEID A
+< #51 OBJECTID to
+< #51 OBJECTID inherit
+< #51 OBJECTID from
+< #51 TYPEID IO
+< #51 '.'
+51,69d32
+< #62 '-'
+< #62 '-'
+< #62 TYPEID B
+< #62 OBJECTID does
+< #62 NOT
+< #62 OBJECTID have
+< #62 OBJECTID to
+< #62 OBJECTID have
+< #62 OBJECTID an
+< #62 OBJECTID extra
+< #62 OBJECTID attribute
+< #62 ','
+< #62 OBJECTID since
+< #62 OBJECTID it
+< #62 INHERITS
+< #62 OBJECTID io
+< #62 OBJECTID from
+< #62 TYPEID A
+< #62 '.'
+91,101d53
+< #71 '-'
+< #71 '-'
+< #71 TYPEID Now
+< #71 OBJECTID the
+< #71 TYPEID IO
+< #71 OBJECTID methods
+< #71 OBJECTID are
+< #71 OBJECTID part
+< #71 OF
+< #71 TYPEID C
+< #71 '.'
+114,136d65
+< #75 '-'
+< #75 '-'
+< #75 TYPEID Note
+< #75 OBJECTID that
+< #75 OBJECTID out_string
+< #75 '('
+< #75 '.'
+< #75 '.'
+< #75 '.'
+< #75 ')'
+< #75 OBJECTID is
+< #75 OBJECTID just
+< #75 OBJECTID a
+< #75 OBJECTID shorthand
+< #75 OBJECTID for
+< #75 OBJECTID self
+< #75 '.'
+< #75 OBJECTID out_string
+< #75 '('
+< #75 '.'
+< #75 '.'
+< #75 '.'
+< #75 ')'
+144,151d72
+< #82 '-'
+< #82 '-'
+< #82 INHERITS
+< #82 TYPEID IO
+< #82 OBJECTID methods
+< #82 OBJECTID from
+< #82 TYPEID C
+< #82 '.'
+171,178d91
+< #91 '-'
+< #91 '-'
+< #91 TYPEID Same
+< #91 CASE
+< #91 OBJECTID as
+< #91 CLASS
+< #91 TYPEID C
+< #91 '.'
+checking lam.cl
+558,566d557
+< #110 '-'
+< #110 '-'
+< #110 TYPEID A
+< #110 OBJECTID pure
+< #110 OBJECTID virtual
+< #110 CLASS
+< #110 OBJECTID representing
+< #110 OBJECTID any
+< #110 OBJECTID expression
+572,577d562
+< #113 '-'
+< #113 '-'
+< #113 TYPEID Print
+< #113 OBJECTID this
+< #113 OBJECTID lambda
+< #113 OBJECTID term
+599,612d583
+< #122 '-'
+< #122 '-'
+< #122 TYPEID Do
+< #122 OBJECTID one
+< #122 OBJECTID step
+< #122 OF
+< #122 '('
+< #122 OBJECTID outermost
+< #122 ')'
+< #122 OBJECTID beta
+< #122 OBJECTID reduction
+< #122 OBJECTID to
+< #122 OBJECTID this
+< #122 OBJECTID term
+634,642d604
+< #131 '-'
+< #131 '-'
+< #131 TYPEID Replace
+< #131 OBJECTID all
+< #131 OBJECTID occurrences
+< #131 OF
+< #131 OBJECTID x
+< #131 OBJECTID by
+< #131 OBJECTID e
+671,679d632
+< #140 '-'
+< #140 '-'
+< #140 TYPEID Generate
+< #140 TYPEID Cool
+< #140 OBJECTID code
+< #140 OBJECTID to
+< #140 OBJECTID evaluate
+< #140 OBJECTID this
+< #140 OBJECTID expression
+988,995d940
+< #229 '-'
+< #229 '-'
+< #229 TYPEID We
+< #229 OBJECTID allow
+< #229 OBJECTID variables
+< #229 OBJECTID to
+< #229 OBJECTID be
+< #229 OBJECTID reused
+1293,1296d1237
+< #299 '-'
+< #299 '-'
+< #299 TYPEID Lazy
+< #299 OBJECTID evaluation
+1693,1707d1633
+< #384 '-'
+< #384 '-'
+< #384 TYPEID Beta
+< #384 '-'
+< #384 OBJECTID reduce
+< #384 OBJECTID an
+< #384 OBJECTID expression
+< #384 ','
+< #384 OBJECTID printing
+< #384 OBJECTID out
+< #384 OBJECTID the
+< #384 OBJECTID term
+< #384 OBJECTID at
+< #384 OBJECTID each
+< #384 OBJECTID step
+checking life.cl
+176,187d175
+< #94 '-'
+< #94 '-'
+< #94 IF
+< #94 OBJECTID none
+< #94 OF
+< #94 OBJECTID the
+< #94 OBJECTID above
+< #94 OBJECTID fit
+< #94 ','
+< #94 THEN
+< #94 OBJECTID just
+< #94 OBJECTID give
+189,197d176
+< #95 '-'
+< #95 '-'
+< #95 OBJECTID the
+< #95 OBJECTID configuration
+< #95 OF
+< #95 OBJECTID the
+< #95 OBJECTID most
+< #95 OBJECTID common
+< #95 OBJECTID board
+checking list.cl
+5,12d4
+< #27 '-'
+< #27 '-'
+< #27 TYPEID Define
+< #27 OBJECTID operations
+< #27 OBJECTID on
+< #27 OBJECTID empty
+< #27 OBJECTID lists
+< #27 '.'
+22,66d13
+< #31 '-'
+< #31 '-'
+< #31 TYPEID Since
+< #31 OBJECTID abort
+< #31 '('
+< #31 ')'
+< #31 OBJECTID has
+< #31 OBJECTID return
+< #31 OBJECTID type
+< #31 TYPEID Object
+< #31 OBJECTID and
+< #31 OBJECTID head
+< #31 '('
+< #31 ')'
+< #31 OBJECTID has
+< #31 OBJECTID return
+< #31 OBJECTID type
+< #32 '-'
+< #32 '-'
+< #32 TYPEID Int
+< #32 ','
+< #32 OBJECTID we
+< #32 OBJECTID need
+< #32 OBJECTID to
+< #32 OBJECTID have
+< #32 OBJECTID an
+< #32 TYPEID Int
+< #32 OBJECTID as
+< #32 OBJECTID the
+< #32 OBJECTID result
+< #32 OF
+< #32 OBJECTID the
+< #32 OBJECTID method
+< #32 OBJECTID body
+< #32 ','
+< #33 '-'
+< #33 '-'
+< #33 OBJECTID even
+< #33 OBJECTID though
+< #33 OBJECTID abort
+< #33 '('
+< #33 ')'
+< #33 OBJECTID never
+< #33 OBJECTID returns
+< #33 '.'
+83,109d29
+< #37 '-'
+< #37 '-'
+< #37 TYPEID As
+< #37 OBJECTID for
+< #37 OBJECTID head
+< #37 '('
+< #37 ')'
+< #37 ','
+< #37 OBJECTID the
+< #37 OBJECTID self
+< #37 OBJECTID is
+< #37 OBJECTID just
+< #37 OBJECTID to
+< #37 OBJECTID make
+< #37 OBJECTID sure
+< #37 OBJECTID the
+< #37 OBJECTID return
+< #37 OBJECTID type
+< #37 OF
+< #38 '-'
+< #38 '-'
+< #38 OBJECTID tail
+< #38 '('
+< #38 ')'
+< #38 OBJECTID is
+< #38 OBJECTID correct
+< #38 '.'
+126,210d45
+< #42 '-'
+< #42 '-'
+< #42 TYPEID When
+< #42 OBJECTID we
+< #42 OBJECTID cons
+< #42 OBJECTID and
+< #42 OBJECTID element
+< #42 OBJECTID onto
+< #42 OBJECTID the
+< #42 OBJECTID empty
+< #42 OBJECTID list
+< #42 OBJECTID we
+< #42 OBJECTID get
+< #42 OBJECTID a
+< #42 OBJECTID non
+< #42 '-'
+< #42 OBJECTID empty
+< #43 '-'
+< #43 '-'
+< #43 OBJECTID list
+< #43 '.'
+< #43 TYPEID The
+< #43 '('
+< #43 NEW
+< #43 TYPEID Cons
+< #43 ')'
+< #43 OBJECTID expression
+< #43 OBJECTID creates
+< #43 OBJECTID a
+< #43 NEW
+< #43 OBJECTID list
+< #43 OBJECTID cell
+< #43 OF
+< #43 CLASS
+< #44 '-'
+< #44 '-'
+< #44 TYPEID Cons
+< #44 ','
+< #44 OBJECTID which
+< #44 OBJECTID is
+< #44 OBJECTID initialized
+< #44 OBJECTID by
+< #44 OBJECTID a
+< #44 OBJECTID dispatch
+< #44 OBJECTID to
+< #44 OBJECTID init
+< #44 '('
+< #44 ')'
+< #44 '.'
+< #45 '-'
+< #45 '-'
+< #45 TYPEID The
+< #45 OBJECTID result
+< #45 OF
+< #45 OBJECTID init
+< #45 '('
+< #45 ')'
+< #45 OBJECTID is
+< #45 OBJECTID an
+< #45 OBJECTID element
+< #45 OF
+< #45 CLASS
+< #45 TYPEID Cons
+< #45 ','
+< #45 OBJECTID but
+< #45 OBJECTID it
+< #46 '-'
+< #46 '-'
+< #46 OBJECTID conforms
+< #46 OBJECTID to
+< #46 OBJECTID the
+< #46 OBJECTID return
+< #46 OBJECTID type
+< #46 TYPEID List
+< #46 ','
+< #46 OBJECTID because
+< #46 TYPEID Cons
+< #46 OBJECTID is
+< #46 OBJECTID a
+< #46 OBJECTID subclass
+< #46 OF
+< #47 '-'
+< #47 '-'
+< #47 TYPEID List
+< #47 '.'
+244,251d78
+< #72 '-'
+< #72 '-'
+< #72 TYPEID The
+< #72 OBJECTID element
+< #72 IN
+< #72 OBJECTID this
+< #72 OBJECTID list
+< #72 OBJECTID cell
+256,262d82
+< #74 '-'
+< #74 '-'
+< #74 TYPEID The
+< #74 OBJECTID rest
+< #74 OF
+< #74 OBJECTID the
+< #74 OBJECTID list
+328,357d147
+< #104 '-'
+< #104 '-'
+< #104 TYPEID Print
+< #104 OBJECTID all
+< #104 OBJECTID elements
+< #104 OF
+< #104 OBJECTID the
+< #104 OBJECTID list
+< #104 '.'
+< #104 TYPEID Calls
+< #104 OBJECTID itself
+< #104 OBJECTID recursively
+< #104 OBJECTID with
+< #105 '-'
+< #105 '-'
+< #105 OBJECTID the
+< #105 OBJECTID tail
+< #105 OF
+< #105 OBJECTID the
+< #105 OBJECTID list
+< #105 ','
+< #105 OBJECTID until
+< #105 OBJECTID the
+< #105 OBJECTID end
+< #105 OF
+< #105 OBJECTID the
+< #105 OBJECTID list
+< #105 OBJECTID is
+< #105 OBJECTID reached
+< #105 '.'
+407,517d196
+< #117 '-'
+< #117 '-'
+< #117 TYPEID Note
+< #117 OBJECTID how
+< #117 OBJECTID the
+< #117 OBJECTID dynamic
+< #117 OBJECTID dispatch
+< #117 OBJECTID mechanism
+< #117 OBJECTID is
+< #117 OBJECTID responsible
+< #117 OBJECTID to
+< #117 OBJECTID end
+< #118 '-'
+< #118 '-'
+< #118 OBJECTID the
+< #118 WHILE
+< #118 LOOP
+< #118 '.'
+< #118 TYPEID As
+< #118 OBJECTID long
+< #118 OBJECTID as
+< #118 OBJECTID mylist
+< #118 OBJECTID is
+< #118 OBJECTID bound
+< #118 OBJECTID to
+< #118 OBJECTID an
+< #118 OBJECTID object
+< #118 OF
+< #119 '-'
+< #119 '-'
+< #119 OBJECTID dynamic
+< #119 OBJECTID type
+< #119 TYPEID Cons
+< #119 ','
+< #119 OBJECTID the
+< #119 OBJECTID dispatch
+< #119 OBJECTID to
+< #119 OBJECTID isNil
+< #119 OBJECTID calls
+< #119 OBJECTID the
+< #119 OBJECTID isNil
+< #119 OBJECTID method
+< #119 OF
+< #120 '-'
+< #120 '-'
+< #120 OBJECTID the
+< #120 TYPEID Cons
+< #120 CLASS
+< #120 ','
+< #120 OBJECTID which
+< #120 OBJECTID returns
+< #120 BOOL_CONST false
+< #120 '.'
+< #120 TYPEID However
+< #120 OBJECTID when
+< #120 OBJECTID we
+< #120 OBJECTID reach
+< #120 OBJECTID the
+< #121 '-'
+< #121 '-'
+< #121 OBJECTID end
+< #121 OF
+< #121 OBJECTID the
+< #121 OBJECTID list
+< #121 ','
+< #121 OBJECTID mylist
+< #121 OBJECTID gets
+< #121 OBJECTID bound
+< #121 OBJECTID to
+< #121 OBJECTID the
+< #121 OBJECTID object
+< #121 OBJECTID that
+< #121 OBJECTID was
+< #122 '-'
+< #122 '-'
+< #122 OBJECTID created
+< #122 OBJECTID by
+< #122 OBJECTID the
+< #122 '('
+< #122 NEW
+< #122 TYPEID List
+< #122 ')'
+< #122 OBJECTID expression
+< #122 '.'
+< #122 TYPEID This
+< #122 OBJECTID object
+< #122 OBJECTID is
+< #122 OF
+< #122 OBJECTID dynamic
+< #122 OBJECTID type
+< #123 '-'
+< #123 '-'
+< #123 TYPEID List
+< #123 ','
+< #123 OBJECTID and
+< #123 OBJECTID thus
+< #123 OBJECTID the
+< #123 OBJECTID method
+< #123 OBJECTID isNil
+< #123 IN
+< #123 OBJECTID the
+< #123 TYPEID List
+< #123 CLASS
+< #123 OBJECTID is
+< #123 OBJECTID called
+< #123 OBJECTID and
+< #124 '-'
+< #124 '-'
+< #124 OBJECTID returns
+< #124 BOOL_CONST true
+< #124 '.'
+checking new_complex.cl
+49,56d48
+< #6 '-'
+< #6 '-'
+< #6 OBJECTID trivially
+< #6 OBJECTID equal
+< #6 '('
+< #6 OBJECTID see
+< #6 TYPEID CoolAid
+< #6 ')'
+88,90d79
+< #11 '-'
+< #11 '-'
+< #11 OBJECTID equal
+checking palindrome.cl
+checking primes.cl
+13,26d12
+< #29 '-'
+< #29 '-'
+< #29 OBJECTID main
+< #29 '('
+< #29 ')'
+< #29 OBJECTID is
+< #29 OBJECTID an
+< #29 OBJECTID atrophied
+< #29 OBJECTID method
+< #29 OBJECTID so
+< #29 OBJECTID we
+< #29 OBJECTID can
+< #29 OBJECTID parse
+< #29 '.'
+34,50d19
+< #33 '-'
+< #33 '-'
+< #33 OBJECTID out
+< #33 OBJECTID is
+< #33 OBJECTID our
+< #33 ERROR "'"
+< #33 OBJECTID output
+< #33 ERROR "'"
+< #33 '.'
+< #33 TYPEID It
+< #33 ERROR "'"
+< #33 OBJECTID s
+< #33 OBJECTID values
+< #33 OBJECTID are
+< #33 OBJECTID the
+< #33 OBJECTID primes
+< #33 '.'
+67,78d35
+< #39 '-'
+< #39 '-'
+< #39 OBJECTID testee
+< #39 OBJECTID is
+< #39 OBJECTID a
+< #39 OBJECTID number
+< #39 OBJECTID to
+< #39 OBJECTID be
+< #39 OBJECTID tested
+< #39 OBJECTID for
+< #39 OBJECTID primeness
+< #39 '.'
+83,93d39
+< #41 '-'
+< #41 '-'
+< #41 OBJECTID divisor
+< #41 OBJECTID is
+< #41 OBJECTID a
+< #41 OBJECTID number
+< #41 OBJECTID which
+< #41 OBJECTID may
+< #41 OBJECTID factor
+< #41 OBJECTID testee
+< #41 '.'
+100,109d45
+< #43 '-'
+< #43 '-'
+< #43 OBJECTID stop
+< #43 OBJECTID is
+< #43 OBJECTID an
+< #43 OBJECTID arbitrary
+< #43 OBJECTID value
+< #43 OBJECTID limiting
+< #43 OBJECTID testee
+< #43 '.'
+114,121d49
+< #45 '-'
+< #45 '-'
+< #45 OBJECTID m
+< #45 OBJECTID supplants
+< #45 OBJECTID the
+< #45 OBJECTID main
+< #45 OBJECTID method
+< #45 '.'
+145,156d72
+< #54 '-'
+< #54 '-'
+< #54 OBJECTID can
+< #54 OBJECTID stop
+< #54 IF
+< #54 OBJECTID divisor
+< #54 ERROR ">"
+< #54 OBJECTID sqrt
+< #54 '('
+< #54 OBJECTID testee
+< #54 ')'
+< #54 '.'
+172,180d87
+< #56 '-'
+< #56 '-'
+< #56 OBJECTID can
+< #56 OBJECTID stop
+< #56 IF
+< #56 OBJECTID divisor
+< #56 OBJECTID divides
+< #56 OBJECTID testee
+< #56 '.'
+199,207d105
+< #63 '-'
+< #63 '-'
+< #63 OBJECTID which
+< #63 OBJECTID reason
+< #63 OBJECTID did
+< #63 OBJECTID we
+< #63 OBJECTID stop
+< #63 OBJECTID for
+< #63 ERROR "?"
+209,221d106
+< #64 '-'
+< #64 '-'
+< #64 OBJECTID testee
+< #64 OBJECTID has
+< #64 OBJECTID no
+< #64 OBJECTID factors
+< #64 OBJECTID less
+< #64 OBJECTID than
+< #64 OBJECTID sqrt
+< #64 '('
+< #64 OBJECTID testee
+< #64 ')'
+< #64 '.'
+227,238d111
+< #66 '-'
+< #66 '-'
+< #66 OBJECTID we
+< #66 OBJECTID could
+< #66 OBJECTID think
+< #66 OF
+< #66 OBJECTID out
+< #66 OBJECTID itself
+< #66 OBJECTID as
+< #66 OBJECTID the
+< #66 OBJECTID output
+< #66 '.'
+251,268d123
+< #70 '-'
+< #70 '-'
+< #70 OBJECTID the
+< #70 LOOP
+< #70 OBJECTID halted
+< #70 OBJECTID on
+< #70 OBJECTID testee
+< #70 '/'
+< #70 OBJECTID divisor
+< #70 '='
+< #70 INT_CONST 0
+< #70 ','
+< #70 OBJECTID testee
+< #70 OBJECTID isn
+< #70 ERROR "'"
+< #70 OBJECTID t
+< #70 OBJECTID prime
+< #70 '.'
+270,280d124
+< #71 '-'
+< #71 '-'
+< #71 OBJECTID testee
+< #71 OBJECTID isn
+< #71 ERROR "'"
+< #71 OBJECTID t
+< #71 OBJECTID prime
+< #71 ','
+< #71 OBJECTID do
+< #71 OBJECTID nothing
+< #71 '.'
+293,302d136
+< #75 '-'
+< #75 '-'
+< #75 OBJECTID we
+< #75 OBJECTID could
+< #75 OBJECTID think
+< #75 OF
+< #75 STR_CONST "halt"
+< #75 OBJECTID as
+< #75 TYPEID SIGTERM
+< #75 '.'
+checking README
+checking sort_list.cl
+158,168d157
+< #57 '-'
+< #57 '-'
+< #57 TYPEID We
+< #57 OBJECTID keep
+< #57 OBJECTID the
+< #57 OBJECTID car
+< #57 IN
+< #57 OBJECTID cdr
+< #57 IN
+< #57 OBJECTID attributes
+< #57 '.'
+173,204d161
+< #58 '-'
+< #58 '-'
+< #58 TYPEID Because
+< #58 OBJECTID methods
+< #58 OBJECTID and
+< #58 OBJECTID features
+< #58 OBJECTID must
+< #58 OBJECTID have
+< #58 OBJECTID different
+< #58 OBJECTID names
+< #58 ','
+< #59 '-'
+< #59 '-'
+< #59 OBJECTID we
+< #59 OBJECTID use
+< #59 OBJECTID xcar
+< #59 OBJECTID and
+< #59 OBJECTID xcdr
+< #59 OBJECTID for
+< #59 OBJECTID the
+< #59 OBJECTID attributes
+< #59 OBJECTID and
+< #59 OBJECTID reserve
+< #60 '-'
+< #60 '-'
+< #60 OBJECTID cons
+< #60 OBJECTID and
+< #60 OBJECTID car
+< #60 OBJECTID for
+< #60 OBJECTID the
+< #60 OBJECTID features
+< #60 '.'
+checking test.cl
+526,528d525
+< #114 '-'
+< #114 '-'
+< #114 ';'

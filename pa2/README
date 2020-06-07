@@ -1,0 +1,99 @@
+README file for Programming Assignment 2 (C++ edition)
+=====================================================
+
+	The Makefile contains targets for compiling and running your
+	program. DO NOT MODIFY.
+
+	The README contains this info. Part of the assignment is to fill
+	the README with the write-up for your project. You should
+	explain design decisions, explain why your code is correct, and
+	why your test cases are adequate. It is part of the assignment
+	to clearly and concisely explain things in text as well as to
+	comment your code. Just edit this file.
+
+	cool.flex is a skeleton file for the specification of the
+	lexical analyzer. You should complete it with your regular
+	expressions, patterns and actions. Information on how to do this
+	is in the flex manual.
+
+	test.cl is a Cool program that you can test the lexical
+	analyzer on. It (intentionally!) contains some errors, so it
+	won't compile with coolc. The errors will help you test your lexer's
+	ability to detect errors. However, test.cl does not exercise
+	all lexical constructs of COOL and part of your assignment is to rewrite
+	test.cl with a complete set of tests for your lexical analyzer.
+	A correct version of this program can be found in the example suite.
+
+	Do not modify any other file.
+
+Instructions
+------------
+
+	To compile your lextest program type:
+
+	% make
+
+	Run your lexer by putting your test input in a file 'foo.cl' and
+	run the lextest program:
+
+	% ./lexer foo.cl
+
+	To run your lexer on the file test.cl type:
+
+	% make dotest
+
+	If you think your lexical analyzer is correct and behaves like
+	the one we wrote, you can try it out by replacing the lexer
+	in the reference compiler with your own lexer. Just copy
+	your compiled lexer binary from this assignment into the
+	directory where the reference compiler is.	
+	If your lexical analyzer behaves in an
+	unexpected manner, you may get errors anywhere, i.e. during
+	parsing, during semantic analysis, during code generation or
+	only when you run the produced code. So beware.
+
+	To submit your solution, run:
+
+	% make zip
+
+	Check the resulting zip file to make sure it contains everything
+	it should. Then submit it on Gradescope.
+
+	GOOD LUCK!
+
+---8<------8<------8<------8<---cut here---8<------8<------8<------8<---
+
+Write-up for PA2
+----------------
+
+1. Explain design decisions, explain why your code is correct, and
+   why your test cases are adequate.
+
+Answer:
+	There are "COMMENT", "INLINE_COMMENT", "QUOTE", "DESSERTED" and "INITIAL" modes in my design.
+	"--" in "INITIAL" mode triggers "INLINE_COMMENT" mode, which only cares about '\n' character to exit the mode.
+	"(*" in "INITIAL" mode triggers "COMMENT" mode. In this mode, line counter increase when meeting 
+with '\n'. Since multiline comments can be nested in COOL, when meeting "(*" we increase left comment
+head counter and decrease when meeting "*)". When meeting "*)" in "INITIAL" mode, we report unmatched 
+comment error. When right end part of comment is missed, '<<EOF>>' will appear in comment which triggers
+"EOF in comment" error.
+	"\"" in "INITIAL" mode triggers "QUOTE" mode, which read a string constant. In this mode, when we
+meets with a "\"", we exit "QUOTE" mode normally. When we meets with "\\n", "\\t", "\\b", "\\f", we need
+to escape them and put corresponding char into string table. When we meet with a '\n', we increase line
+number and report "Unterminated string constant" error and exit to "INITIAL" code. "\\\n" is tricky since
+it needs to skip a line of code. If we meets a "<<EOF>>", we report "EOF in string" error. When we meets
+some other chars, we add it into string buffer, when we try to add a char to buffer but the buffer is full,
+we report "String constant too long" error and enter "DESSERTED" mode. When we meets a null char ('\0'),
+we report "String contains null character." error and enter "DESSERTED" mode.
+	"DESSERTED" is triggered by error in String. In DESSERTED mode we eat anything until we meet with an
+unescaped newline ('\n') or an '<<EOF>>' or an unesacepd '\"'.
+	In "INITIAL" mode, we catch any valid operator and return them. We catch case-insensitive keywords, 
+boolean constants and return corresponding value. When integer constant or class name or object name catched
+we put them into corresponding tables. When we meets legal whitespace like '\t', '\v', '\r', '\f', we ignore
+them. Double backslash ("\\") is error here. Other invalid chars will be reported as errors.
+
+	Please see source code for more detailed explaination.
+
+	It's trival to test normal cases with cool syntax in "test.cl". I added ample errors in "test.cl" which
+nearly covers every error I mentions above as well as their combinations as corner cases. The test file
+includes special chars in code, Sting const and multiple usage of escape char.

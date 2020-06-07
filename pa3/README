@@ -1,0 +1,102 @@
+README file for Programming Assignment 3 (C++ edition)
+======================================================
+
+	The Makefile contains targets for compiling and running your
+	program. DO NOT MODIFY.
+    
+	The README contains this info. Part of the assignment is to
+	fill in the README with the write-up for your project. You should
+	explain design decisions, explain why your code is correct, and why
+	your test cases are adequate. It is part of the assignment to
+	clearly and concisely explain things in text as well as to comment
+	your code. Just edit this file.
+
+	cool.y is the skeleton for the parser specification that you
+	are to write. It already contains productions for the program
+	and the classes. Use them as an example to write the remaining
+	productions.  You should also read the bison documentation.
+	This skeleton will compile and run as is, but it doesn't
+	do much.
+
+	good.cl, bad.cl test a few features of the grammar. You should
+	add tests to ensure that good.cl exercises every legal
+	construction of the grammar and that bad.cl exercises as many
+	different parsing errors as you can squeeze into one file.
+
+    Do not modify any other file.
+
+Instructions
+------------
+
+	To compile your parser program type:
+
+	% make
+
+	This produces an executable named "parser" which is standalone
+	phase of the Cool compiler. The parser executable accepts
+    as input the output of the lexer phase, so in order to test it,
+    you'll need to copy a lexer into the directory: either your
+    own lexer from the previous assignment, or the lexer from the
+    reference implementation of the compiler.
+
+	To run your parser on the files good.cl and bad.cl type:
+
+	% make dotest
+
+    If you think your parser is correct and behaves like
+    the one we wrote, you can try it out by replacing the parser
+    in the reference compiler with your own lexer. Just copy
+    your compiled parser binary from this assignment into the
+    directory where the reference compiler is.
+
+    To submit your solution, run:
+
+    % make zip
+
+    Check the resulting zip file to make sure it contains everything
+    it should. Then submit it on Gradescope.
+
+	GOOD LUCK!
+
+---8<------8<------8<------8<---cut here---8<------8<------8<------8<---
+
+Write-up for PA3
+----------------
+
+1. Explain design decisions, explain why your code is correct, and why
+    your test cases are adequate.
+	
+## Cool.y
+	According to 'Cool-manual', the design comes from a top-down approach.
+	The nonterminals contains `class_list`, `class`, `dummy_feature_list`, `feature_list`,
+`feature`, `parameter`, `paremeter_list`, `exp`, `exp_parameter_list`, `block`, `branch` and
+`let_stmt`.
+	The `class_list` could be one or more class. The `class` could declare `inherits` explicitly
+or implicitly, and could contians zero or one or more features.
+	The `feature` could be a method or a attrubute or merely the empty feature, and one or more 
+features constitute a `feature_list`. If the feature is an attrubute, it could have default value
+or assigned with assignment sign and an expression. If the feature is a method, it could contain
+one or more parameters and must contain a expression in brace.
+	The `parameter` actually refers to a instance of 'formal' in 'cool-tree.c'. And parameter 
+list is concatenation of more than one parameters divided by comma.
+	The `block` is made up of one or more expressions seperated by semicolon.
+	The `branch` appears in case statement and contains one or more assignments with semicolon.
+	The `let_stmt` consists of an assignment with default value or not and could be nested in 
+another `let_stmt` recursively.
+	The `exp` is the core part. An `exp` could be an object, a const, arithmetical operation (+, -
+*, /), comparison ( <, <=, = ), double char operator (<=), isvoid, new, neg, statements (while, if,
+case), `block`, static dispatch and dynamic dispatch. In expression, priority should be: 1. left
+executtion order: dynamic dispath > static dispath > neg > isvoid > mul = divide > plus = minus > not;
+2. right order: assign > let_stmt; 3. syntax error between comparison: leq | less | equal
+
+## good.cl
+	The `good.cl` file contains as many correct corner cases as cool.y describes, including all
+possible cases of `exp` and all cases in class and feature definitions. Besides, all cool files
+included in 'example' folders have served as test cases.
+
+## bad.cl
+	The `bad.cl` file test whether parser could recover from syntax errors. There are several error
+that could be catched: 1. missing semicolon; 2. object or type not exists; 3. invalid syntax; 4.
+empty expression, and other errors could be reducted to these types of errors. The parser would 
+recover from feature_list or class_list or a block of codes if error occurs in only middle one of them.
+Thus the parser would gives multiple error alerts sequentially instead of ignoring them.

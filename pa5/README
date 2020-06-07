@@ -1,0 +1,246 @@
+README file for Programming Assignment 5  (C++ edition)
+=======================================================
+
+	The Makefile contains targets for compiling and running your
+	program, as well as handing it in. DO NOT MODIFY.
+
+	The README contains this info. Part of the assignment is to
+	fill the README with the write-up for your project. You should
+	explain design decisions, explain why your code is correct,
+	and why your test cases are adequate. It is part of the
+	assignment to clearly and concisely explain things in text as
+	well as to comment your code. Just edit this file.
+
+	In example.cl you should write a correct Cool program which
+	tests as many aspects of the code generator as possible. It
+	should pass your code generator, and running spim on the
+	generated output should run the program correctly.
+
+	cgen.cc is the skeleton file for the code generator. This
+	skeleton is much larger than the ones for previous
+	assignments.  The skeleton provides three components of the
+	code generator:
+
+		- functions to build the inheritance graph; (we supply
+		  this in case you didn't get this working for PA4)
+
+		- functions to emit global data and constants;
+		 
+		- functions to emit spim instructions; (we supply
+		  these last two to save you some tedious coding)
+
+	You should work to understand this code, and it will help you
+        write the rest of the code generator.
+
+	cgen.h is the header file for the code generator. Feel free to
+	add anything you need.
+
+	cgen_supp.cc is general support code for the code generator.
+	You can add functions as you see fit, but do not modify the
+    provided functions.
+
+	emit.h defines a bunch of macros which should come in handy
+	when you actually want to emit code. Feel free to change
+	anything here to suit your needs.
+
+        cgen-phase.cc supplies the driver for the compiler. You should
+        not modify this code.
+
+	symtab.h contains a symbol table implementation. You may
+        modify this file if you'd like.
+
+	cool.h contains definitions that are used by almost all parts
+	of the compiler. DO NOT MODIFY.
+
+        tree.h contains the base class `tree_node' of the AST nodes.
+        DO NOT MODIFY.
+
+        cool-tree.cc, cool-tree.h, and cool-tree.handcode.h contain
+        the declarations and definitions of code generation AST nodes.
+        You may add fields as you wish, but you shouldn't modify any
+        of the methods already there except `code', which you may
+        modify or remove as you wish.  Note that cool-tree.handcode.h
+        is different from the same file in PA4---this file contains
+        function definitions needed for the cgen.cc skeleton.  You may
+        modify cool-tree.h or cool-tree.handcode.h, but don't modify
+        cool-tree.cc.  Place all method definitions in cgen.cc
+
+        Do not modify any other file.
+
+Instructions
+------------
+
+	To compile your compiler and code generator type:
+
+	% make
+
+    This produces an executable named "cgen" which is standalone
+    phase of the Cool compiler. The code generator executable
+    accepts as input the output of the semant phase, so in order 
+    to test it, you'll need to copy a lexer, parser, and semantic
+    analyzer into the directory: either your own lexer and parser
+    from the previous assignments, or the lexer, parser, and semantic
+    analyzer from the reference implementation of the compiler.
+
+	To run your compiler on the file example.cl, type:
+
+	% make dotest
+
+    This will produce a compiled assembly language file example.s
+    and attempt to run it. You should examine the assembly language
+    file to make sure that it makes sense.
+
+    If you think your code generator checker is correct and behaves like
+    the one we wrote, you can try it out by replacing the code
+    generator in the reference compiler with your own code generator.
+    Just copy your compiled cgen binary from this assignment into the
+    directory where the reference compiler is.
+
+    To submit your solution, run:
+
+    % make zip
+
+    Check the resulting zip file to make sure it contains everything
+    it should. Then submit it on Gradescope.
+
+	GOOD LUCK!
+
+---8<------8<------8<------8<---cut here---8<------8<------8<------8<---
+
+Write-up for PA5
+----------------
+
+1. Explain design decisions, explain why your code is correct,
+    and why your test cases are adequate.
+
+
+####################################################################
+########                   Design                           ########                                        
+####################################################################
+The implementation of PA5 is mostly referenced to that of given 'refimpl' compiler.
+The code generator read through the semantic AST, collecting information about each
+class and their features and recording them into their local class. Then it iterate 
+through all the classes to generate class prototype and global table including class-
+name table and class-obj table, then it generate class init method and methods feature
+in each class.
+
+During the whole process, it obeys two basic principles:
+1. After each emiting assembly code for each expression, the value of registers should
+not be changed.
+2. After each method method dispatch (including class init method), the stack frame 
+not be changed.
+
+Then I do develop some optimization on reducing stack manipulation and flexible usage 
+on registers. Below will be introduction of each components.
+
+####################################################################
+########                     CLASSTAG                       ########                                        
+####################################################################
+Classtag is an important and interesitng part to code generator. As is acknowledged, 
+classtag should be a uuid for each class. It could be used to identify instances of 
+classes. Furthermore, the classtag should be in accordance to it offset in class_nameTab
+and class_objTable, the latter one very useful in dispatching on a new SELF_TYPE Object.
+
+In my implementation, I assign each class an classtag in the initialization of `CgenNode` 
+class. Some special classtag like Bool, Int and String should also be noted explicitly in
+the installation of basic class. There is one more thing that worth being mentioned, that 
+classtag could be used in identifying range of subclass. I split the contiguous classtag 
+range into clusters, and store the utmost range for each class. E.g. Int classtag is 5 and 
+its ranged subclass classtag is 10, illustrating that a class would be a subclass of Int, iff
+it's classtag is between 5 and 10, which would be useful in emitting code for case&branch
+expression.
+
+####################################################################
+########               COLLECTING FEATURES                  ########                                        
+####################################################################
+After generating the global tables, the code generator iterate through the classes to store 
+inforamtion about its features, which may includes it's instance class, it's name, it's offset
+and also some additional information helping build up the inheritance relationship. I use a 
+`DispatchTab` class to store those information using a way of inheritance. The code generator 
+cannot skip this step, because these helpful informations would help a lot in furtion code emission.
+
+####################################################################
+########               CLASS PROTOTYPE                      ########                                        
+####################################################################
+In my design, emitting code for class prototype is the last step before emitting global .text
+segments. Emission of a prototype is strictly corresponding to this is described in cool manual.
+It first add a `-1` eye catcher for garbage collector, then the classtag, length, dispatch table 
+reference, and each attribute. Some attribute declared with basic class would be initialized with 
+default constant object, the others would be initialized with zero noting its current void if init
+method doesn't do something to it. This process would be conducted to its children recursively.
+
+####################################################################
+########               CLASS INIT METHOD                    ########                                        
+####################################################################
+Class init method is used for initialization of class attributes. It' s often dispatched after 
+copying an object prototype, so it's helpful to considering this two part together. Class init 
+method code would also be emitted recursively. 
+In class initialization, it would first enter a variable scope, then push parent's $ra, $s0, $fp in
+stack, then it would run its parent's init method if it's not the Object class. Then it would run init
+expression for each attribute, get a return value and store them in corresponding offset. The order is 
+important here because it would run it's parent init method first, which guarantee to init inherited
+attributes before new attributes. After that $a0 will contains the value of $s0 and pop caller registers
+from the stack.
+
+####################################################################
+########               CLASS  METHOD                        ########                                        
+####################################################################
+Class method code emission is also a recursive process. Different from init method, we don't need to 
+write code for predefined method of basic classes. During the class method code emission, it also
+push registers to stack. In my design, it then allocate space for storing tmp variable, which would be 
+introduced in latter part. Then for each formal, it has to record the corresponding position away
+fron stack pointer. I do this using a class MemoryContext which stores offset to a assigned register.
+Then method expression is evaluted and then exit the scope and restore regiester values.
+
+####################################################################
+########               EXPRESSION                           ########                                        
+####################################################################
+Emitting code for expression is a messy and verbose process. Instead of diving too deep into details, 
+I only introduce a general process. In my design, emitting code for expression is a idempotent operation
+, i.e. after generating code for an expression, the values of registers remain unchanged. Thus nearly
+in every expression code emission, I stored the registers used in this process and restored them from
+stack on exit. This may introduce some redundant stack manipulation code, but it guarantees the status
+of registers is available to the code generator. Most of the precedure of expression code emitting is 
+inspired by the given `refimpl` compiler, and some kit function like `equality_test` is very useful.
+
+####################################################################
+########               VARIABLE                             ########                                        
+####################################################################
+Vairable in COOL may come from four sources:
+1. method formal
+2. class attribute
+3. let expression
+4. case expression
+Vairable from formals are stored on the stack, and can be access from their offset to the frame pointer.
+Variable from class attribute is also easy to access, because we hold an $s0 self register in each context.
+Variable from let expression is a little bit hard to solve. In my design, I allocate a special tmp
+vairbale space for this expression and holds its relative offset to frame pointer. Thus before I dive into
+code generation for the method expression, I would first get the maxium nested count in let expression in 
+each method or init method and allocate corresponding space and I do this in a recursive way. My stack frame
+may looks like this 
+        [   FP  ]
+        [-------]
+        [       ]
+        [  ...  ]  <- tmp vairable for let expression
+        [       ]
+        [-------]
+        [   SP  ]
+Variable from case expression is stored in T3 register.
+
+####################################################################
+########               OPTIMIZTION                          ########                                        
+####################################################################
+Pushing tmp registers on stack is stack-costing, thus when calculating huge nested arithmetic expression
+it would detect the nested depth, and only storing register value on the entrace to emitting whole 
+expression, i.e. it would skip inner register stacking operations to avoid using up the stack space.
+Further more details could be found in my source code, which is finely commented.
+
+####################################################################
+########               TEST CASE                            ########                                        
+####################################################################
+In my test case, I design several inherted classes and encapsulate each expression operation into `learn`
+class methods. In my `main` method, I test combinations of these methods to see it works.
+
+Besides, I use all given example cool codes including `arith.cl`, `prime.cl`, `cells.cl`, `booklist.cl`
+and `lam.cl` e.t.c., which contains adequate recursive and complex methods to test my code. The result 
+shows that it passes all tests.

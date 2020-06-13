@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "sstream": "cpp",
-        "system_error": "cpp",
-        "utility": "cpp",
-        "iosfwd": "cpp"
-    }
-}

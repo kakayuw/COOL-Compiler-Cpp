@@ -8,3 +8,4 @@ Cool, an acronym for Classroom Object Oriented Language. Cool language is lite a
 - [PA3](./pa3/README): parser. Generator CFG with bison.
 - [PA4](./pa4/README): semantic analyser. Write augmented AST to do static type checking and enable inheritance graph.
 - [PA5](./pa5/README): code generator. Reinforce AST to emit MIPS assembly code recognized by spim.
+

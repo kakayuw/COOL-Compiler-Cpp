@@ -1,5 +1,5 @@
 # COOL-Compiler-Cpp
-A simple COOL language compiler implemented by C++ & .
+A simple COOL language compiler implemented by C++ & Bison & Flex & Spim.
 
 Cool, an acronym for Classroom Object Oriented Language. Cool language is lite and functional enough to explore the design and implementation of compiler. The implementation of COOL compiler is decoupled into four indenpendent components: lexer, parser, semantic analyser and code generator, which reads the previous phase's output and generator corresponding outputs.
 
